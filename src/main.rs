@@ -1,3 +1,22 @@
+//! ``wav_inspect`` is a simple command line tool for inspecting the header of a wav file. It uses
+//! [WaveRs](https://crates.io/crates/wavers) as the backend for reading the audio data.
+//!
+//! By passing the file path of a wav file, the program will display the content of the file header. 
+//! Currently, what you can expect in the output is:
+//!     1. Format Chunk
+//!     2. List Chunk (if present)
+//!     3. Fact Chunk (if present)
+//!     4. All chunks present in the header and their offset within the file. 
+//!
+//! ## Installation
+//! You can download and install ``wav_inspect`` using ``cargo install wav_inspect``
+//!
+//! ## Usage 
+//! From the command line just run:
+//! ``wav_inspect <file_path>``
+//!
+//!
+
 use clap::{arg, command};
 use colored::Colorize;
 use std::path::PathBuf;

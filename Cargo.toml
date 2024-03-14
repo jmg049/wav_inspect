@@ -1,9 +1,25 @@
 [package]
 name = "wav_inspect"
+authors = ["Jack Geraghty <jgeraghty049@gmail.com>"]
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "A command line tool for inspecting the header of a wav file."
+readme = "README.md"
+homepage = "https://github.com/jmg049/wav_inspect"
+repository = "https://github.com/jmg049/wav_inspect"
+documentation = "https://docs.rs/wav_inspect"
+keywords = ["audio", "wav", "inspect", "tool"]
+categories = ["audio", "inspection", "tools"]
 
 [dependencies]
 clap = { version = "4.5.2", features = ["derive", "cargo"] }
 colored = "2.1.0"
-wavers = { version="1.3.0", features = ["colored"]}
+wavers = { version="1.3.1", features = ["colored"]}
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+panic = "abort"
+strip = true
