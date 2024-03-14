@@ -1,0 +1,9 @@
+[package]
+name = "wav_inspect"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.2", features = ["derive", "cargo"] }
+colored = "2.1.0"
+wavers = { version="1.3.0", features = ["colored"]}
